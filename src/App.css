@@ -1,38 +1,305 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Pen Script";
+  min-height: 100vh;
+  margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 650px) {
+  .App {
+    width: 640px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+@media (max-width: 650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.App {
   min-height: 100vh;
+  padding: 0 20px;
+}
+
+/* MyButton css */
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+  font-size: 18px;
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+}
+.MyButton_positive {
+  background-color: #64c964;
+  color: white;
+}
+.MyButton_negative {
+  background-color: #fd565f;
+  color: white;
+}
+.MyButton_default {
+  background-color: #ececec;
+  color: black;
+}
+
+/* header */
+header {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+header > div {
+  display: flex;
+}
+header .head_text {
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+header .head_btn_left {
+  width: 25%;
+}
+header .head_btn_right {
+  width: 25%;
+  display: flex;
+  justify-content: end;
+}
+
+header button {
+  font-family: "Nanum Pen Script";
+}
+
+/* Diary_List */
+.DiaryList .menu_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryList .menu_wrapper .right_col {
+  flex-grow: 1;
+}
+
+.DiaryList .menu_wrapper .right_col button {
+  width: 100%;
+}
+
+.DiaryList .ControlMenu {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Nanum pen Script";
+  font-size: 18px;
+}
+
+/* DiaryItem */
+.DiaryItem {
+  padding: 15px 0;
+  border-bottom: 1px solid #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+}
+.DiaryItem .emotion_img_wrapper {
+  cursor: pointer;
+  min-width: 120px;
+  height: 80px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+.DiaryItem .emotion_img_wrapper_5 {
+  background-color: #64c964;
+}
+.DiaryItem .emotion_img_wrapper_4 {
+  background-color: #9dd772;
+}
+.DiaryItem .emotion_img_wrapper_3 {
+  background-color: #fdce17;
+}
+.DiaryItem .emotion_img_wrapper_2 {
+  background-color: #fd8446;
+}
+.DiaryItem .emotion_img_wrapper_1 {
+  background-color: #fd565f;
+}
+
+.DiaryItem .emotion_img_wrapper img {
+  width: 50%;
+}
+.DiaryItem .info_wrapper {
+  flex-grow: 1;
+  margin-left: 20px;
+
+  cursor: pointer;
+}
+
+.DiaryItem .diary_date {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.DiaryItem .diary_content_preview {
+  font-size: 18px;
+}
+.DiaryItem .btn_wrapper {
+  min-width: 70px;
+}
+
+/* DiaryEditor */
+
+.DiaryEditor {
+}
+
+.DiaryEditor section {
+  margin-bottom: 40px;
+}
+.DiaryEditor h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.DiaryEditor .input_date {
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Nanum pen Script";
+  font-size: 20px;
+}
+
+/* Emotion Item */
+.DiaryEditor .emotion_list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 2%;
+}
+.EmotionItem {
+  display: flex;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 20px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.EmotionItem_off {
+  background-color: #ececec;
+}
+.EmotionItem_on1 {
+  background-color: #fd565f;
+}
+.EmotionItem_on2 {
+  background-color: #fd8446;
+}
+.EmotionItem_on3 {
+  background-color: #fdce17;
+}
+.EmotionItem_on4 {
+  background-color: #9dd772;
+}
+.EmotionItem_on5 {
+  background-color: #64c964;
+}
+.EmotionItem img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+.EmotionItem span {
+  font-size: 18px;
+}
+.DiaryEditor textarea {
+  font-family: "Nanum pen Script";
+  font-size: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+}
+
+/* diary page */
+.Diarypage section {
+  width: 100%;
+  margin-bottom: 100px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.Diarypage h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.Diarypage .diary_img_wrapper {
+  background-color: #ececec;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.Diarypage .emotion_descript {
+  font-size: 30px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Diarypage .diary_img_wrapper_5 {
+  background-color: #64c964;
+}
+.Diarypage .diary_img_wrapper_4 {
+  background-color: #9dd772;
+}
+.Diarypage .diary_img_wrapper_3 {
+  background-color: #fdce17;
+}
+.Diarypage .diary_img_wrapper_2 {
+  background-color: #fd8446;
+}
+.Diarypage .diary_img_wrapper_1 {
+  background-color: #fd565f;
+}
+.Diarypage .diary_content_wrapper {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #ececec;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Diarypage .diary_content_wrapper p {
+  padding: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-family: "Yeon Sung";
+  font-weight: 400;
+  line-height: 2.5;
 }
